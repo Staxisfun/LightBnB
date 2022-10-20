@@ -5,7 +5,7 @@ VALUES ('Jim Jones', 'jimj@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBID
 
 
 
-INSERT INTO properties (title, description, cost_per_night, parking_spaces, number_bathrooms, number_bedrooms, thumbnail_photo, cover_photo, country, street, city, province, post_code, active, owner_id)
+INSERT INTO properties (title, description, cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, thumbnail_photo_url, cover_photo_url, country, street, city, province, post_code, active, owner_id)
 VALUES ('Speed lamp', 'description', 120.00, 3, 1, 2, 'https://images.pexels.com/photos/2086676/pexels-photo-2086676.jpeg?auto=compress&cs=tinysrgb&h=350', 'https://images.pexels.com/photos/2086676/pexels-photo-2086676.jpeg', 'canada', '536 Namsub Highway', 'Sotboske', 'Quebec', '28142', true, 1),
        
        ('Blank corner', 'description', 90.00, 1, 1, 1, 'https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress& canada, cs=tinysrgb&h=350', 'https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg', 'canada', '651 Nami Road', 'Bohbatev', 'Alberta', '83680', true, 2),
