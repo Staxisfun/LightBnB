@@ -35,6 +35,10 @@ const getUserWithEmail = function(email) {
 
 exports.getUserWithEmail = getUserWithEmail;
 
+
+
+
+
 /**
  * Get a single user from the database given their id.
  * @param {string} id The id of the user.
@@ -52,6 +56,10 @@ return pool
 exports.getUserWithId = getUserWithId;
 
 
+
+
+
+
 /**
  * Add a new user to the database.
  * @param {{name: string, password: string, email: string}} user
@@ -67,6 +75,10 @@ const addUser =  function(user) {
 }
 exports.addUser = addUser;
 
+
+
+
+
 /// Reservations
 
 /**
@@ -75,9 +87,25 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function(guest_id, limit = 10) {
-  return getAllProperties(null, 2);
+  
+  
+  return pool
+  .query(`SELECT reservations.*, properties.* FROM reservations JOIN properties ON property_id = properties.id WHERE guest_id = $1 LIMIT $2`, [guest_id,limit])
+
+  .then((result) => {
+     return result.rows;
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+
 }
 exports.getAllReservations = getAllReservations;
+
+
+
+
 
 /// Properties
 
@@ -102,6 +130,9 @@ const getAllProperties = function(options, limit = 10) {
 };
 
 exports.getAllProperties = getAllProperties;
+
+
+
 
 
 /**
